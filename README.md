@@ -84,12 +84,82 @@ The following SQL Queries were developed to answer spesific business questions:
    ```
    
 3. **Calculate total sales per category**:
-   ```sql
+ ```sql
   select category, sum(total_sale) as net_sel, count(*) as total_orders
   from retail_sales
   group by 1 
   order by 2 desc;
-  ```
+ ```
 
-4. **d**
+4. **Find the average age of customers by category**:
+   ```sql
+   select avg(age) as avg_age
+   from retail_sales
+   where category = 'Beauty';
+   ```
+
+5. **Identify high-value transactions**:
+   ```sql
+   select * from retail_sales
+   where total_sale > 1000;
+   ```
+
+6. **Transaction by gender and category**:
+   ```sql
+   select category, gender, count(transactions_id) as total_transaction
+   from retail_sales
+   group by 1,2
+   order by 3 desc;
+   ```
+
+7. **Average sales per month and identify the best selling months**:
+   ```sql
+   select year, month, avg_sale
+   from
+   (
+   select
+   	extract(year from sale_date) as year,
+   	extract(month from sale_date) as month,
+   	round(avg(total_sale),2) as avg_sale,
+	rank() over(partition by extract(year from sale_date) order by round(avg(total_sale),2) desc) as ranking
+	from retail_sales
+	group by 1,2) as t1
+   where ranking = 1;
+   ```
+
+   8. **Top 5 customers by totalsales**:
+      ```sql
+      select customer_id, sum(total_sale) as total_sale
+      from retail_sales
+      group by 1
+      order by 2 desc
+      limit 5;
+      ```
+
+   9. **Find the number of unique customer who purchased items for each category**:
+       ```sql
+       select category, count(distinct customer_id) as cust
+       from retail_sales
+       group by 1;
+       ```
+
+   10. **Order analysis by shift (Morning, Afternoon, Evening)**:
+   ```sql
+       with hourly_time as
+       (
+       	select *,
+	case
+	when extract(hour from sale_time) <= 12 then "morning"
+   	WHEN extract(hour from sale_time) BETWEEN 13 AND 17 THEN 'afternoon'
+    	when extract(hour from sale_time) > 17 then 'evening'
+	ELSE 'outside_range'
+   	END AS time_period from retail_sales)
+    select time_period, category, count(*) as total_orders
+    from hourly_time
+    group by 1,2
+    order by 3 desc;
+   ```
+
+## Findings:
+
 
