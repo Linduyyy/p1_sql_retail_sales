@@ -168,9 +168,9 @@ The following SQL Queries were developed to answer spesific business questions:
 
 ## Reports
 
--**Sales Summary**: A detailed report summarizing total sales, customer demographics, and category performance.
--**Sales Analysis**: Insights into sales trends across diferent mont and shifts.
--**Customer Insights**: Reports on top customers and unique customer counts per category.
+- **Sales Summary**: A detailed report summarizing total sales, customer demographics, and category performance.
+- **Sales Analysis**: Insights into sales trends across diferent mont and shifts.
+- **Customer Insights**: Reports on top customers and unique customer counts per category.
 
 ## Conclusion
 
