@@ -89,7 +89,7 @@ The following SQL Queries were developed to answer spesific business questions:
   from retail_sales
   group by 1 
   order by 2 desc;
-   ```
+  ```
 
-4. **Find the average age of customers by category**:
+4. **d**
 
