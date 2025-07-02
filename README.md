@@ -178,13 +178,6 @@ The following SQL Queries were developed to answer spesific business questions:
 
 This project serves as a comprehensive introduction to SQL for data analysts, covering database setup, data cleaning, exploratory data analysis and bysiness-driven SQL queries. The findings from this project can help drive business by understanding sales patterns, customer behavior and product performance.
 
-## How to Use
-
-1. **Clone the Repository**: Clone this project repository from GitHub.
-2. **Setup the Database**: Run the SQL scripts provided in the `database_setup.sql` file to create and populate the database.
-3. **Run the Queries**: Use the SQL queries provided in the `analysis_queries.sql` file to perform your analysis.
-4. **Explore and Modify**: Feel free to modify the queries to explore different aspects of the dataset or answer additional business questions.
-
 ## Author - Linda Ismail Sabaniah
 
 This project is part of my portofolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback or would like to colaborate, feel fre to get in touch.
