@@ -3,10 +3,12 @@
 ## Project Overview
 
 **Project Title**: Retail Sales Analysis
+
 **Level**: Beginner
+
 **Databasee**: sql_project_p1_db
 
-Thid project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data. The project involve setting up a retail sales database, performing exploratory data analysis (EDA), and answering spesific business questions through SQL queries. This project is ideal for those who are starting their journey in data analysis and want to build a solid foundation in SQL.
+Thid project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data. The project involve setting up a retail sales database, performing exploratory data analysis (EDA), and answering spesific business questions through SQL queries.
 
 ## Objectives
 
@@ -57,13 +59,13 @@ select * from retail_sales
 where 
 	sale_date is null or sale_time is null or customer_id is null or
 	gender is null or age is null or category is null or
-  quantity is null or price_per_unit is null or cogs is null or total_sale is null;
+  	quantity is null or price_per_unit is null or cogs is null or 		total_sale is null;
 
 delete from retail_sales
 where
 	sale_date is null or sale_time is null or customer_id is null or
 	gender is null or age is null or category is null or
-  quantity is null or price_per_unit is null or cogs is null or total_sale is null;
+	quantity is null or price_per_unit is null or cogs is null or 		total_sale is null;
 ```
 
 ### 3. Data Analysis & Findings
@@ -121,7 +123,7 @@ The following SQL Queries were developed to answer spesific business questions:
    	extract(year from sale_date) as year,
    	extract(month from sale_date) as month,
    	round(avg(total_sale),2) as avg_sale,
-	rank() over(partition by extract(year from sale_date) order by round(avg(total_sale),2) desc) as ranking
+	rank() over(partition by extract(year from sale_date) order by 		round(avg(total_sale),2) desc) as ranking
 	from retail_sales
 	group by 1,2) as t1
    where ranking = 1;
