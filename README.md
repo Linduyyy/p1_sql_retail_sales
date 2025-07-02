@@ -8,7 +8,7 @@
 
 **Databasee**: sql_project_p1_db
 
-Thid project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data. The project involve setting up a retail sales database, performing exploratory data analysis (EDA), and answering spesific business questions through SQL queries.
+This project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data. The project involve setting up a retail sales database, performing exploratory data analysis (EDA), and answering spesific business questions through SQL queries.
 
 ## Objectives
 
