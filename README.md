@@ -123,7 +123,7 @@ The following SQL Queries were developed to answer spesific business questions:
    	extract(year from sale_date) as year,
    	extract(month from sale_date) as month,
    	round(avg(total_sale),2) as avg_sale,
-	rank() over(partition by extract(year from sale_date) order by 		round(avg(total_sale),2) desc) as ranking
+   	rank() over(partition by extract(year from sale_date) order by round(avg(total_sale),2) desc) as ranking
 	from retail_sales
 	group by 1,2) as t1
    where ranking = 1;
